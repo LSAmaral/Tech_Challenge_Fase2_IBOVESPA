@@ -1,0 +1,15 @@
+# Ignorar ambiente virtual (Gigante e desnecessário)
+venv/
+env/
+.env
+
+# Ignorar arquivos compilados do Python
+__pycache__/
+*.pyc
+
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# (Opcional) Ignorar os gráficos png se quiser gerar na hora
+# Mas para esse trabalho, pode deixar os PNGs lá para facilitar a visualização.
