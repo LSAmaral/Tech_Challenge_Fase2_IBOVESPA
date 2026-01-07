@@ -120,3 +120,21 @@ plt.savefig("grafico_previsao_tempo.png")
 print(" -> Salvo: grafico_previsao_tempo.png")
 
 print("\n🚀 PROJETO FINALIZADO COM SUCESSO!")
+
+# --- CAMADA DE TRADUÇÃO VISUAL (REQUISITO DO PROJETO) ---
+print("\n" + "📈 RELATÓRIO DE TENDÊNCIAS (ÚLTIMOS 5 DIAS)")
+print("-" * 45)
+
+# Mapeamento para as setas do enunciado
+mapa_setas = {1: "↑ ALTA", 0: "↓ BAIXA"}
+
+# Criar DataFrame de visualização
+df_visual = pd.DataFrame(
+    {
+        "Data": datas_teste.dt.strftime("%d/%m/%Y"),
+        "Realidade": y_teste.map(mapa_setas),
+        "Previsão": pd.Series(previsoes_finais).map(mapa_setas).values,
+    }
+)
+print(df_visual.tail(5).to_string(index=False))
+print("-" * 45)
