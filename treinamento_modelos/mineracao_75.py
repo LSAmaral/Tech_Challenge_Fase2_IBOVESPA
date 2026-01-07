@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 
 
-# --- 1. CARGA E FUNÇÕES ---
+# --- 1. CARGA E FUNÇ ÕES ---
 def calcular_rsi(series, janela=14):
     delta = series.diff()
     ganho = (delta.where(delta > 0, 0)).rolling(window=janela).mean()
