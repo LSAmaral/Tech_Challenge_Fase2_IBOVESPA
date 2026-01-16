@@ -49,13 +49,14 @@ X = df[features]
 y = df["target"]
 
 # Normalização
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
 
-X_treino = X_scaled[:indice_corte]
+X_treino_raw = X.iloc[:indice_corte]
+X_teste_raw = X.iloc[indice_corte:]
 y_treino = y.iloc[:indice_corte]
-X_teste = X_scaled[indice_corte:]
 y_teste = y.iloc[indice_corte:]
+scaler = StandardScaler()
+X_treino = scaler.fit_transform(X_treino_raw)
+X_teste = scaler.transform(X_teste_raw)
 
 # Treinamento
 print(f"🤖 Treinando Modelo Campeão (Logistic Regression)...")
